@@ -1,0 +1,26 @@
+<select #sm (change)="sel(sm.value)">
+    <option *ngFor="let mode of modes" [value]="mode">{{mode}}</option>
+</select>
+<table>
+    <style>
+        td{
+            border: 1px solid black;
+        }
+    </style>
+    <thead>
+        <tr>
+            <td>
+                Server Name
+            </td>
+            <td>
+                Type
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let server of getServers()"  style="border: 1px solid black;">
+            <td>{{server.name}}</td>
+            <td>{{server.type}}</td>
+        </tr>
+    </tbody>
+</table>
